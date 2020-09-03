@@ -5,9 +5,22 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "emuladores": "emus",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "ios8": "react-native run-ios --simulator=\"iPhone 8\"",
+    "iosse": "react-native run-ios --simulator=\"iPhone SE\"",
+    "iosplus": "react-native run-ios --simulator=\"iPhone 8 Plus\"",
+    "iospro": "react-native run-ios --simulator=\"iPhone 11 Pro\"",
+    "iosmax": "react-native run-ios --simulator=\"iPhone 11 Pro Max\"",
+    "reset": "rm -rf node_modules ios/build ios/Pod ios/Pods android/build android/.gradle package-lock.json",
+    "all": "npm run reset && npm i && cd ios && pod install && cd .. && npm run ios",
+    "allandroid": "npm run reset && npm i && npm run android",
+    "release": "react-native run-android --variant=release",
+    "postinstall": "npx jetify -r",
+    "generateapk": "cd android && ./gradlew assembleRelease",
+    "generateapkwindows": "cd android && .\\gradlew assembleRelease"
   },
   "dependencies": {
     "react": "16.13.1",
